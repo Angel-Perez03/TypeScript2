@@ -20,7 +20,6 @@ const totalSeasons = series.reduce((sum, serie) => sum + serie.seasons, 0);
 const averageSeasons = (totalSeasons / series.length).toFixed(2);
 document.getElementById('promedio')!.innerText = averageSeasons;
 
-// Generar las filas de la tabla
 const serieBody = document.getElementById('serie-body')!;
 series.forEach(serie => {
     const row = document.createElement('tr');
