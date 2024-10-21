@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Series de Televisión</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 text-center">Lista de Series </h1>
+        <table class="table table-hover table-dark mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Canal</th>
+                    <th scope="col">Temporadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Breaking Bad</td>
+                    <td>AMC</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Orange Is the New Black</td>
+                    <td>Netflix</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Game of Thrones</td>
+                    <td>HBO</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>The Big Bang Theory</td>
+                    <td>CBS</td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3" class="text-right">Promedio de Temporadas:</th>
+                    <td id="promedio"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        const series = [
+            { id: 1, name: "Breaking Bad", channel: "AMC", seasons: 5 },
+            { id: 2, name: "Orange Is the New Black", channel: "Netflix", seasons: 6 },
+            { id: 3, name: "Game of Thrones", channel: "HBO", seasons: 7 },
+            { id: 4, name: "The Big Bang Theory", channel: "CBS", seasons: 12 }
+        ];
+
+        // Calcular el promedio de temporadas
+        const totalSeasons = series.reduce((sum, serie) => sum + serie.seasons, 0);
+        const averageSeasons = (totalSeasons / series.length).toFixed(2);
+
+        // Mostrar el promedio en la tabla
+        document.getElementById('promedio').innerText = averageSeasons;
+    </script>
+</body>
+</html>
